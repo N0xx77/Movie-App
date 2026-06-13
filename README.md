@@ -108,6 +108,21 @@ npm run dev
 
 Open the URL shown by Vite (typically `http://localhost:5173`).
 
+## Deployment (GitHub Pages)
+
+This repository is configured to deploy the built site to GitHub Pages using GitHub Actions. Key notes:
+
+- The Vite `base` is set to `/Movie-App/` in `vite.config.js` so the site works as a project site at `https://<username>.github.io/Movie-App/`.
+- The workflow `/.github/workflows/gh-pages.yml` builds the site and publishes the `dist` folder.
+- Set the following repository secrets (Settings → Secrets → Actions) so the Actions build can include your environment values at build time:
+	- `VITE_TMDB_API_KEY`
+	- `VITE_APPWRITE_ENDPOINT`
+	- `VITE_APPWRITE_PROJECT_ID`
+	- `VITE_APPWRITE_DATABASE_ID`
+	- `VITE_APPWRITE_COLLECTION_ID`
+
+After adding the secrets, push to `main` and the workflow will run and publish the site. You can also build locally and manually publish `dist` to `docs/` if you prefer.
+
 ## Scripts
 
 - `npm run dev` starts the development server
