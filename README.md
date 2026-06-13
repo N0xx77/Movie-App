@@ -1,5 +1,7 @@
 # Movie App
 
+Live demo: https://N0xx77.github.io/Movie-App/
+
 A React + Vite movie discovery app that fetches data from TMDB and tracks trending searches with Appwrite.
 
 ## Features
